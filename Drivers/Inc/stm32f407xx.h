@@ -117,6 +117,49 @@
 
 /******************************************************/
 
+/* Volatile */
+#define _vo volatile
+
+/*Structures for RCC engine */
+typedef struct{
+_vo uint32_t RCC_CR;
+_vo uint32_t RCC_PLLCFGR;
+_vo uint32_t RCC_CIR;
+_vo uint32_t RCC_AHB1RSTR;
+_vo uint32_t RCC_AHB2RSTR;
+_vo uint32_t RCC_AHB3RSTR;
+_vo uint32_t RCC_APB1RSTR;
+_vo uint32_t RCC_APB2RSTR;
+_vo uint32_t Reserved0[2];
+_vo uint32_t RCC_AHB1ENR;
+_vo uint32_t RCC_AHB2ENR;
+_vo uint32_t RCC_AHB3ENR;
+_vo uint32_t Reserved1;
+_vo uint32_t RCC_APB1ENR;
+_vo uint32_t RCC_APB2ENR;
+_vo uint32_t Reserved2[2];
+_vo uint32_t RCC_AHB1LPENR;
+_vo uint32_t RCC_AHB2LPENR;
+_vo uint32_t RCC_AHB3LPENR
+_vo uint32_t Reserved3;
+_vo uint32_t RCC_APB1LPENR;
+_vo uint32_t RCC_APB2LPENR;
+_vo uint32_t Reserved4[2];
+_vo uint32_t RCC_BDCR;
+_vo uint32_t RCC_CSR;
+_vo uint32_t Reserved5[2];
+_vo uint32_t RCC_SSCGR;
+_vo uint32_t RCC_PLLI2SCFGR;
+_vo uint32_t RCC_PLLSAICFGR;
+_vo uint32_t RCC_DCKCFGR;
+}RCC_RegDef_t;
+
+
+
+
+
+
+
 
 
 
