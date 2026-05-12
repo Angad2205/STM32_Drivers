@@ -7,6 +7,7 @@
 
 #ifndef INC_STM32F407XX_H_
 #define INC_STM32F407XX_H_
+#include <stdint.h>
 
 /******************************************************/
 /*Memory region*/
@@ -120,7 +121,10 @@
 /* Volatile */
 #define _vo volatile
 
+/******************************************************/
+
 /*Structures for RCC engine */
+
 typedef struct{
 _vo uint32_t RCC_CR;
 _vo uint32_t RCC_PLLCFGR;
@@ -140,7 +144,7 @@ _vo uint32_t RCC_APB2ENR;
 _vo uint32_t Reserved2[2];
 _vo uint32_t RCC_AHB1LPENR;
 _vo uint32_t RCC_AHB2LPENR;
-_vo uint32_t RCC_AHB3LPENR
+_vo uint32_t RCC_AHB3LPENR;
 _vo uint32_t Reserved3;
 _vo uint32_t RCC_APB1LPENR;
 _vo uint32_t RCC_APB2LPENR;
@@ -154,13 +158,81 @@ _vo uint32_t RCC_PLLSAICFGR;
 _vo uint32_t RCC_DCKCFGR;
 }RCC_RegDef_t;
 
+/******************************************************/
 
+/*Structures for GPIO register*/
 
+typedef struct{
+_vo uint32_t GPIOx_MODER;
+_vo uint32_t GPIOx_OTYPER;
+_vo uint32_t GPIOx_OSPEEDR;
+_vo uint32_t GPIOx_PUPDR;
+_vo uint32_t GPIOx_IDR;
+_vo uint32_t GPIOx_ODR;
+_vo uint32_t GPIOx_BSRR;
+_vo uint32_t GPIOx_LCKR;
+_vo uint32_t GPIOx_AFRL;
+_vo uint32_t GPIOx_AFRH;
+}GPIO_RegDef_t;
 
+/******************************************************/
 
+/* RCC_RegDef_t *pGPIOA = (RCC_RegDef_t *)GPIOA_BASE; / Its the structure pointer pointing to the GPIOA base address and its structure align perfectly with the memory address*/
+#define GPIOA  (RCC_RegDef_t *)GPIOA_BASE
+#define GPIOB  (RCC_RegDef_t *)GPIOB_BASE
+#define GPIOC  (RCC_RegDef_t *)GPIOC_BASE
+#define GPIOD  (RCC_RegDef_t *)GPIOD_BASE
+#define GPIOE  (RCC_RegDef_t *)GPIOE_BASE
+#define GPIOF  (RCC_RegDef_t *)GPIOF_BASE
+#define GPIOG  (RCC_RegDef_t *)GPIOG_BASE
+#define GPIOH  (RCC_RegDef_t *)GPIOH_BASE
+#define GPIOI  (RCC_RegDef_t *)GPIOI_BASE
+#define GPIOJ  (RCC_RegDef_t *)GPIOJ_BASE
+#define GPIOK  (RCC_RegDef_t *)GPIOK_BASE
 
+/******************************************************/
 
+/*General Macros for Modes*/
+#define GPIO_MODE_INPUT (0x0U)
+#define GPIO_MODE_OUTPUT (0x1U)
+#define GPIO_MODE_ALT (0x2U)
+#define GPIO_MODE_ANALOG (0x3U)
 
+/******************************************************/
 
+/*General Macros for Alternate Functionality*/
+
+#define GPIO_MODE_AF0 (0x0U)
+#define GPIO_MODE_AF1 (0x1U)
+#define GPIO_MODE_AF2 (0x2U)
+#define GPIO_MODE_AF3 (0x3U)
+#define GPIO_MODE_AF4 (0x4U)
+#define GPIO_MODE_AF5 (0x5U)
+#define GPIO_MODE_AF6 (0x6U)
+#define GPIO_MODE_AF7 (0x7U)
+#define GPIO_MODE_AF8 (0x8U)
+#define GPIO_MODE_AF9 (0x9U)
+#define GPIO_MODE_AF10 (0xAU)
+#define GPIO_MODE_AF11 (0xBU)
+#define GPIO_MODE_AF12 (0xCU)
+#define GPIO_MODE_AF13 (0xDU)
+#define GPIO_MODE_AF14 (0xEU)
+#define GPIO_MODE_AF15 (0xFU)
+
+/******************************************************/
+
+/*General Macros for GPIO Speed Modes*/
+#define GPIO_MODE_SPEED_LOW (0x0U)
+#define GPIO_MODE_SPEED_MEDIUM (0x1U)
+#define GPIO_MODE_SPEED_HIGH (0x2U)
+#define GPIO_MODE_SPEED_VERY_HIGH (0x3U)
+
+/******************************************************/
+
+/*General Macros for GPIO Set and Reset*/
+#define SET (0x0U)
+#define RESET (0x1U)
+
+/******************************************************/
 
 #endif /* INC_STM32F407XX_H_ */
