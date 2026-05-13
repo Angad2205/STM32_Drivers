@@ -17,6 +17,7 @@
  */
 
 #include "stm32f407xx.h"
+#include "stm32_GPIO_driver.h"
 #include <stdint.h>
 
 #if !defined(__SOFT_FP__) && defined(__ARM_FP)

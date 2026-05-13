@@ -178,17 +178,49 @@ _vo uint32_t GPIOx_AFRH;
 /******************************************************/
 
 /* RCC_RegDef_t *pGPIOA = (RCC_RegDef_t *)GPIOA_BASE; / Its the structure pointer pointing to the GPIOA base address and its structure align perfectly with the memory address*/
-#define GPIOA  (RCC_RegDef_t *)GPIOA_BASE
-#define GPIOB  (RCC_RegDef_t *)GPIOB_BASE
-#define GPIOC  (RCC_RegDef_t *)GPIOC_BASE
-#define GPIOD  (RCC_RegDef_t *)GPIOD_BASE
-#define GPIOE  (RCC_RegDef_t *)GPIOE_BASE
-#define GPIOF  (RCC_RegDef_t *)GPIOF_BASE
-#define GPIOG  (RCC_RegDef_t *)GPIOG_BASE
-#define GPIOH  (RCC_RegDef_t *)GPIOH_BASE
-#define GPIOI  (RCC_RegDef_t *)GPIOI_BASE
-#define GPIOJ  (RCC_RegDef_t *)GPIOJ_BASE
-#define GPIOK  (RCC_RegDef_t *)GPIOK_BASE
+#define GPIOA  ((GPIO_RegDef_t*)GPIOA_BASE)
+#define GPIOB  ((GPIO_RegDef_t*)GPIOB_BASE)
+#define GPIOC  ((GPIO_RegDef_t*)GPIOC_BASE)
+#define GPIOD  ((GPIO_RegDef_t*)GPIOD_BASE)
+#define GPIOE  ((GPIO_RegDef_t*)GPIOE_BASE)
+#define GPIOF  ((GPIO_RegDef_t*)GPIOF_BASE)
+#define GPIOG  ((GPIO_RegDef_t*)GPIOG_BASE)
+#define GPIOH  ((GPIO_RegDef_t*)GPIOH_BASE)
+#define GPIOI  ((GPIO_RegDef_t*)GPIOI_BASE)
+#define GPIOJ  ((GPIO_RegDef_t*)GPIOJ_BASE)
+#define GPIOK  ((GPIO_RegDef_t*)GPIOK_BASE)
+
+/******************************************************/
+
+#define RCC	   ((RCC_RegDef_t *)RCC_BASE)
+
+/******************************************************/
+
+/* GPIO clock enabled macros */
+/* All the GPIOs are hanging on AHB1 bus */
+#define GPIOA_CLK_ENABLE()   (RCC->RCC_AHB1ENR |= (1U << 0))
+#define GPIOB_CLK_ENABLE()   (RCC->RCC_AHB1ENR |= (1U << 1))
+#define GPIOC_CLK_ENABLE()   (RCC->RCC_AHB1ENR |= (1U << 2))
+#define GPIOD_CLK_ENABLE()   (RCC->RCC_AHB1ENR |= (1U << 3))
+#define GPIOE_CLK_ENABLE()   (RCC->RCC_AHB1ENR |= (1U << 4))
+#define GPIOF_CLK_ENABLE()   (RCC->RCC_AHB1ENR |= (1U << 5))
+#define GPIOG_CLK_ENABLE()   (RCC->RCC_AHB1ENR |= (1U << 6))
+#define GPIOH_CLK_ENABLE()   (RCC->RCC_AHB1ENR |= (1U << 7))
+#define GPIOI_CLK_ENABLE()   (RCC->RCC_AHB1ENR |= (1U << 8))
+
+/******************************************************/
+
+/* GPIO clock disable macros */
+/* All the GPIOs are hanging on AHB1 bus */
+#define GPIOA_CLK_DISABLE()   (RCC->RCC_AHB1ENR &= ~(1U << 0))
+#define GPIOB_CLK_DISABLE()   (RCC->RCC_AHB1ENR &= ~(1U << 1))
+#define GPIOC_CLK_DISABLE()   (RCC->RCC_AHB1ENR &= ~(1U << 2))
+#define GPIOD_CLK_DISABLE()   (RCC->RCC_AHB1ENR &= ~(1U << 3))
+#define GPIOE_CLK_DISABLE()   (RCC->RCC_AHB1ENR &= ~(1U << 4))
+#define GPIOF_CLK_DISABLE()   (RCC->RCC_AHB1ENR &= ~(1U << 5))
+#define GPIOG_CLK_DISABLE()   (RCC->RCC_AHB1ENR &= ~(1U << 6))
+#define GPIOH_CLK_DISABLE()   (RCC->RCC_AHB1ENR &= ~(1U << 7))
+#define GPIOI_CLK_DISABLE()   (RCC->RCC_AHB1ENR &= ~(1U << 8))
 
 /******************************************************/
 
@@ -230,8 +262,10 @@ _vo uint32_t GPIOx_AFRH;
 /******************************************************/
 
 /*General Macros for GPIO Set and Reset*/
-#define SET (0x0U)
-#define RESET (0x1U)
+#define SET (0x1U)
+#define RESET (0x0U)
+#define ENABLE SET
+#define DISABLE RESET
 
 /******************************************************/
 
