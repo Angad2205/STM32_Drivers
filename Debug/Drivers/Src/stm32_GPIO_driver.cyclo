@@ -1,1 +1,7 @@
-../Drivers/Src/stm32_GPIO_driver.c:12:6:GPIO_ClkControl	28
+../Drivers/Src/stm32_GPIO_driver.c:13:6:GPIO_Init	6
+../Drivers/Src/stm32_GPIO_driver.c:99:6:GPIO_DeInit	11
+../Drivers/Src/stm32_GPIO_driver.c:132:10:GPIO_ReadfromInputPort	1
+../Drivers/Src/stm32_GPIO_driver.c:141:9:GPIO_ReadfromInputPin	1
+../Drivers/Src/stm32_GPIO_driver.c:151:6:GPIO_WriteToPort	3
+../Drivers/Src/stm32_GPIO_driver.c:163:6:GPIO_WriteToPin	5
+../Drivers/Src/stm32_GPIO_driver.c:175:6:GPIO_ClkControl	28

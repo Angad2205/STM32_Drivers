@@ -10,7 +10,7 @@
 
 
 typedef struct{
-	uint8_t PinNummber;
+	uint8_t PinNumber;
 	uint8_t PinMode;
 	uint8_t PunPd;
 	uint8_t PinOutputMode;
@@ -21,15 +21,15 @@ typedef struct{
 typedef struct{
 	GPIO_RegDef_t *pGPIOX;
 	GPIO_Config_t *pGPIOXconfig;
-}GPIO_Handler_t;
+}GPIO_handler_t;
 
 //--------------------------------------------------------------------------------------
 //======================== API prototyping =============================================
 
-void GPIO_Init(GPIO_Handler_t *pGPIO_handler);
+void GPIO_Init(GPIO_handler_t *pGPIO_handler);
 void GPIO_DeInit(GPIO_RegDef_t *pGPIO);
-uint8_t GPIO_ReadfromInputPin(void);
-uint16_t GPIO_ReadfromInputPort(void);
+uint8_t GPIO_ReadfromInputPin(GPIO_handler_t *pGPIO_handler);
+uint16_t GPIO_ReadfromInputPort(GPIO_RegDef_t *pGPIO);
 void GPIO_ClkControl(GPIO_RegDef_t * pRCC , uint8_t EnorDis);
 void GPIO_WriteToPin(GPIO_RegDef_t *pGPIO, uint8_t PinNumber, uint8_t Data);
 void GPIO_WriteToPort(GPIO_RegDef_t *pGPIO, uint8_t Data);

@@ -224,6 +224,20 @@ _vo uint32_t GPIOx_AFRH;
 
 /******************************************************/
 
+/*GPIO De-init Macros */
+#define GPIOA_DEINIT()	do{RCC->RCC_AHB1RSTR |= (1U << 0); RCC->RCC_AHB1RSTR &= ~(1U << 0); }while(0)
+#define GPIOB_DEINIT()	do{RCC->RCC_AHB1RSTR |= (1U << 1); RCC->RCC_AHB1RSTR &= ~(1U << 1); }while(0)
+#define GPIOC_DEINIT()	do{RCC->RCC_AHB1RSTR |= (1U << 2); RCC->RCC_AHB1RSTR &= ~(1U << 2); }while(0)
+#define GPIOD_DEINIT()	do{RCC->RCC_AHB1RSTR |= (1U << 3); RCC->RCC_AHB1RSTR &= ~(1U << 3); }while(0)
+#define GPIOE_DEINIT()	do{RCC->RCC_AHB1RSTR |= (1U << 4); RCC->RCC_AHB1RSTR &= ~(1U << 4); }while(0)
+#define GPIOF_DEINIT()	do{RCC->RCC_AHB1RSTR |= (1U << 5); RCC->RCC_AHB1RSTR &= ~(1U << 5); }while(0)
+#define GPIOG_DEINIT()	do{RCC->RCC_AHB1RSTR |= (1U << 6); RCC->RCC_AHB1RSTR &= ~(1U << 6); }while(0)
+#define GPIOH_DEINIT()	do{RCC->RCC_AHB1RSTR |= (1U << 7); RCC->RCC_AHB1RSTR &= ~(1U << 7); }while(0)
+#define GPIOI_DEINIT()	do{RCC->RCC_AHB1RSTR |= (1U << 8); RCC->RCC_AHB1RSTR &= ~(1U << 8); }while(0)
+#define GPIOJ_DEINIT()	do{RCC->RCC_AHB1RSTR |= (1U << 9); RCC->RCC_AHB1RSTR &= ~(1U << 9); }while(0)
+
+/******************************************************/
+
 /*General Macros for Modes*/
 #define GPIO_MODE_INPUT (0x0U)
 #define GPIO_MODE_OUTPUT (0x1U)
@@ -268,5 +282,7 @@ _vo uint32_t GPIOx_AFRH;
 #define DISABLE RESET
 
 /******************************************************/
+
+
 
 #endif /* INC_STM32F407XX_H_ */
